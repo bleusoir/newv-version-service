@@ -3,7 +3,6 @@ package dev.newv.version.controller;
 import dev.newv.version.domain.VersionInfo;
 import dev.newv.version.service.VersionInfoService;
 import lombok.extern.slf4j.Slf4j;
-import net.minidev.json.JSONObject;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -14,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+
+import static org.springframework.http.ResponseEntity.ok;
 
 @Slf4j
 @RestController
@@ -36,10 +37,10 @@ public class VersionController {
     @GetMapping("/{name}")
     public ResponseEntity<?> getInfoByName(@PathVariable String name) {
 
-        return ResponseEntity.ok().body(versionInfoService.getInfoByName(name));
+        return ok().body(versionInfoService.getInfoByName(name));
     }
 
-    @GetMapping("/{name}")
+    @GetMapping("/{name}/history")
     public List<VersionInfo> getListsByName(@PathVariable String name, Pageable pageable) {
 
         Pageable page =
