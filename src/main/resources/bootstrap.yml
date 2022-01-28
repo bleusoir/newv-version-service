@@ -1,0 +1,12 @@
+---
+spring:
+  config.activate.onProfile: prod
+  cloud:
+    config:
+      uri: http://${CLOUD_CONFIG_URI:newv-config}:${CLOUD_CONFIG_PORT:8888}
+---
+spring:
+  config.activate.onProfile: dev
+  cloud:
+    config:
+      uri: http://${CLOUD_CONFIG_URI:localhost}:${CLOUD_CONFIG_PORT:8888}
