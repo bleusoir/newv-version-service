@@ -24,6 +24,7 @@ ext {
 
 dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
     implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
 
     implementation 'org.springframework.cloud:spring-cloud-starter'
@@ -31,7 +32,9 @@ dependencies {
     implementation 'org.springframework.cloud:spring-cloud-starter-bootstrap'
     implementation 'org.springframework.cloud:spring-cloud-starter-netflix-eureka-client'
 
+    implementation 'net.minidev:json-smart:2.4.7'
     implementation 'org.apache.logging.log4j:log4j-core:2.17.1'
+    implementation 'org.mariadb.jdbc:mariadb-java-client:3.0.3'
     implementation 'com.github.ben-manes.caffeine:caffeine:3.0.5'
 
     compileOnly 'org.projectlombok:lombok'
